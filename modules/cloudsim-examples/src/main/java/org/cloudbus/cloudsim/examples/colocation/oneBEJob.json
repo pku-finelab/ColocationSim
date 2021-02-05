@@ -1,0 +1,20 @@
+{
+  "jobs": [
+    {
+      "jobName": "job1",
+      "tasks": [
+        {
+          "taskName": "t1",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "memBW": 2,
+          "instructionNum": 5000,
+          "sensitiveFun": "best",
+          "parents": [
+          ]
+        }
+      ]
+    }
+  ]
+}

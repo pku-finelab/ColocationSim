@@ -1,0 +1,198 @@
+{
+  "jobs": [
+    {
+      "jobName": "job1",
+      "tasks": [
+        {
+          "taskName": "t1",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+
+          ]
+        },
+        {
+          "taskName": "t2",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t1"
+          ]
+        },
+        {
+          "taskName": "t3",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+
+          ]
+        },
+        {
+          "taskName": "t4",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t3"
+          ]
+        },
+        {
+          "taskName": "t5",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t4"
+          ]
+        },
+        {
+          "taskName": "t6",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+
+          ]
+        },
+        {
+          "taskName": "t7",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t6"
+          ]
+        },
+        {
+          "taskName": "t8",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+
+          ]
+        },
+        {
+          "taskName": "t9",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t8"
+          ]
+        },
+        {
+          "taskName": "t10",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t9"
+          ]
+        },
+        {
+          "taskName": "t11",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+
+          ]
+        },
+        {
+          "taskName": "t12",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t11","t10"
+          ]
+        },
+        {
+          "taskName": "t13",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t7",
+            "t5",
+            "t12"
+          ]
+        },
+        {
+          "taskName": "t14",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t13"
+          ]
+        },
+        {
+          "taskName": "t15",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t14"
+          ]
+        },
+        {
+          "taskName": "t16",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t15"
+          ]
+        },
+        {
+          "taskName": "t17",
+          "cpuQuota": 10,
+          "ramQuotaMB": 2048,
+          "cpuShare": 100,
+          "instructionNum": 1000,
+          "sensitiveFun": "best",
+          "parents": [
+            "t16"
+          ]
+        }
+      ]
+    }
+  ]
+}

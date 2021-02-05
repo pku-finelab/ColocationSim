@@ -1,0 +1,289 @@
+{
+  "app": "search",
+  "sla": [
+    {"service": "search-render", "targetRT": 1, "MaxRT": 1.5 },
+    {"service": "saw-countw", "targetRT": 1, "MaxRT": 1.5},
+    {"service": "ads-servlet", "targetRT": 1, "MaxRT": 1.5}
+  ],
+  "load":{
+    "startAt": 100,
+    "duration": 100,
+    "type":"const",
+    "entrypoints":[
+      {"service": "search-render", "qps": 1},
+      {"service": "saw-countw", "qps": 1},
+      {"service": "ads-servlet", "qps": 1}
+    ]
+  },
+  "sensitiveFunctions": {
+    "search-scoring" : [[1.0082,1.00102],[2.0165,0.98949],[3.025,0.97858],[4.0215,0.96177],[5.0533,0.95677],[6.0272,0.94494],[7.0239,0.93061],[8.044,0.92313],[9.0066,0.91253],[9.9806,0.90163],[11.0363,0.91157],[11.9986,0.89724],[13.0768,0.90065],[14.0394,0.88943],[15.0245,0.87417],[16.0552,0.853],[17.0059,0.83619],[18.0139,0.81906],[18.9639,0.79322],[19.9733,0.79694],[21.028,0.79226],[22.0257,0.79193],[23.012,0.79316],[24.0669,0.79096],[25.0188,0.79188],[25.9706,0.79155],[26.9798,0.79247],[28.0004,0.79183],[29.067,0.79306],[29.9384,0.7918],[30.9127,0.78432]],
+    "search-render" : [[0.9353,1.00122],[1.9226,1.00244],[2.8783,0.98811],[3.8443,0.95519],[4.8302,0.92561],[5.7896,0.89306],[6.7689,0.84848],[7.7415,0.82635],[8.6973,0.77378],[9.6426,0.73825],[10.6194,0.71537],[11.5857,0.73012],[12.5415,0.71076],[13.5708,0.6776],[14.5266,0.65766],[15.4824,0.65094],[16.4802,0.62571],[17.373,0.60988],[18.3603,0.61463],[19.3687,0.60263],[20.3665,0.60973],[21.2908,0.60096],[22.2466,0.60571],[23.2549,0.60194],[24.2422,0.60993],[25.1665,0.60938],[26.0803,0.60384],[28.0654,0.60365],[29.0842,0.60429]],
+    "big-table" : [[1.0358,1.000605],[2.0092,0.963434],[2.9882,0.950971],[4.0176,0.945388],[5.0037,0.940979],[5.9674,0.927763],[6.9849,0.91073],[7.9807,0.892229],[8.9981,0.872847],[10.0063,0.87431],[10.9811,0.863736],[11.9887,0.857859],[12.9642,0.856093],[13.9916,0.827023],[14.9664,0.816742],[15.9951,0.803232],[16.9803,0.788254],[18.0072,0.753019],[19.0033,0.738334],[19.978,0.728054],[21.0076,0.724819],[21.9613,0.721879],[22.9909,0.720112],[23.9991,0.721282],[24.9637,0.718635],[26.0153,0.71951],[26.9906,0.71657],[27.9991,0.720968],[28.9856,0.721844],[29.9607,0.714793],[30.9911,0.722128]],
+    "ads-servlet" : [[0.9638,1.0003],[1.9718,0.98887],[2.9692,0.97539],[3.9881,0.96425],[5.0062,0.96191],[5.9928,0.94813],[7.0008,0.93729],[7.9876,0.92087],[8.9949,0.91824],[9.9698,0.91473],[10.9881,0.91033],[11.9741,0.90418],[13.0031,0.90184],[13.9996,0.89833],[14.9868,0.87781],[15.9837,0.8699],[16.9809,0.85817],[18.0226,0.83296],[18.9656,0.8227],[19.9835,0.823],[20.9799,0.82184],[21.9763,0.82038],[22.9943,0.82009],[24.002,0.81276],[24.9762,0.81746],[25.9938,0.82245],[26.9904,0.81865],[27.9869,0.81514],[28.9722,0.81749],[29.9687,0.81515],[30.9756,0.81809]],
+    "maps-detect-face" : [[0.9973,0.999563],[2.0013,0.993043],[2.9964,0.994453],[3.9856,0.994156],[5.0064,0.992229],[6.0041,0.985958],[6.9962,0.981161],[8.0168,0.972872],[8.9943,0.955972],[10.0034,0.940313],[11.0126,0.934197],[12.0218,0.92971],[13.0138,0.922508],[13.9915,0.916236],[15.0206,0.898715],[16.0268,0.879643],[17.0131,0.87725],[18.0134,0.849643],[19.0054,0.845932],[19.9889,0.846643],[21.0271,0.856665],[22.0133,0.844575],[23.0199,0.854829],[24.0205,0.846851],[25.0041,0.84764],[25.9904,0.846256],[27.023,0.863416],[28.0148,0.846127],[29.0156,0.849399],[30.0307,0.848171],[30.9941,0.849037]],
+    "protobuf" : [[0.9691,0.999872],[1.9664,0.972646],[2.9627,0.972333],[3.99,0.965199],[4.9761,0.968296],[5.9792,0.969826],[6.9689,0.965457],[7.9689,0.958139],[8.9858,0.956166],[9.989,0.954931],[10.9787,0.952222],[11.9957,0.946009],[12.9851,0.94883],[13.9828,0.91165],[14.9832,0.893365],[15.9936,0.880424],[16.9805,0.859374],[17.9844,0.838047],[18.9673,0.831835],[19.9983,0.815023],[20.9846,0.811669],[21.9605,0.811448],[22.9945,0.807816],[23.9841,0.806766],[24.9873,0.804332],[25.9803,0.803374],[26.9663,0.807485],[27.9901,0.803023],[28.9898,0.806489],[29.976,0.803503],[30.9689,0.805494]],
+    "docs-analyzer" : [[0.9838,1.000586],[1.9919,0.986714],[2.9946,0.975997],[3.9865,0.965354],[4.992,0.954344],[5.9866,0.941425],[6.9839,0.922415],[7.992,0.914708],[9.0083,0.906266],[9.992,0.898265],[10.9921,0.893127],[11.9948,0.887621],[12.9867,0.884611],[13.9813,0.85327],[14.9976,0.831104],[16.0084,0.806809],[17.0084,0.780166],[17.9949,0.772018],[18.9922,0.769815],[20.0031,0.772016],[21.0058,0.774878],[21.9896,0.774877],[23.0031,0.772234],[23.9923,0.772307],[25.0167,0.774508],[26.0086,0.772085],[26.9924,0.77502],[28.0086,0.774872],[29.0195,0.775385],[29.987,0.775311],[30.9897,0.775237]],
+    "saw-countw" : [[0.9899,1.000481],[1.9956,0.997855],[2.9905,0.994274],[3.9935,0.994401],[4.9965,0.99251],[5.9995,0.989883],[6.9943,0.976756],[7.9946,0.971854],[9.0002,0.950576],[9.9787,0.932676],[11.0197,0.92021],[11.9901,0.912003],[12.9931,0.902841],[14.0095,0.883399],[14.9854,0.870198],[16.01,0.852299],[16.994,0.837336],[17.9996,0.823034],[19.0215,0.809467],[20.0219,0.815873],[21.0032,0.817285],[21.9981,0.816788],[23.0092,0.821726],[24.0068,0.819761],[25.0044,0.818677],[26.0291,0.824569],[27.0104,0.818712],[28.008,0.820124],[29.0219,0.815883],[30.0168,0.82596],[31.0089,0.820323]],
+    "youtube" : [[0.9918,0.999456],[1.995,0.999144],[2.9926,0.993709],[3.993,0.994718],[4.9934,0.992465],[5.9824,0.985555],[6.9799,0.982449],[8.0121,0.963816],[9.0012,0.951083],[9.9933,0.932061],[10.9996,0.918863],[12.0057,0.915213],[13.0063,0.903567],[13.984,0.885943],[14.9988,0.878644],[16.0022,0.865601],[17.0142,0.854498],[17.9947,0.8413],[19.0182,0.834234],[20.0071,0.83369],[21.0103,0.830661],[21.9936,0.823673],[22.9997,0.823362],[24.0317,0.821187],[25.0234,0.820954],[25.9981,0.817692],[27.0099,0.81839],[28.0217,0.822582],[29.0192,0.82064],[29.9995,0.818077],[30.997,0.821104]]
+  },
+  "services": [
+    {
+      "name": "search-render",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "search-render",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["search-scoring1", "search-scoring2", "search-scoring3"]},
+        {"type":"local", "insNum": 45}
+      ]
+    },
+    {
+      "name": "search-scoring1",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "search-scoring",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["search-scoring1-protobuf"]},
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "search-scoring1-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "protobuf",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["bt1-search-scoring1-protobuf","bt2-search-scoring1-protobuf"]},
+        {"type":"local", "insNum": 10}
+      ]
+    },
+    {
+      "name": "bt1-search-scoring1-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "bt2-search-scoring1-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "search-scoring2",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "search-scoring",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["search-scoring2-protobuf"]},
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "search-scoring2-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "protobuf",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["bt1-search-scoring2-protobuf","bt2-search-scoring2-protobuf"]},
+        {"type":"local", "insNum": 10}
+      ]
+    },
+    {
+      "name": "bt1-search-scoring2-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "bt2-search-scoring2-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "search-scoring3",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "search-scoring",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["search-scoring3-protobuf"]},
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "search-scoring3-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "protobuf",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["bt1-search-scoring3-protobuf","bt2-search-scoring3-protobuf"]},
+        {"type":"local", "insNum": 10}
+      ]
+    },
+    {
+      "name": "bt1-search-scoring3-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "protobuf",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "bt2-search-scoring3-protobuf",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "ads-servlet",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "ads-servlet",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 10},
+        {"type":"remote", "deps":["protobuf-ads-saw"]},
+        {"type":"local", "insNum": 70}
+      ]
+    },
+    {
+      "name": "protobuf-ads-saw",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "protobuf",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30},
+        {"type":"remote", "deps":["bt-protobuf-ads-saw"]},
+        {"type":"local", "insNum": 100}
+      ]
+    },
+    {
+      "name": "bt-protobuf-ads-saw",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "big-table",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 30}
+      ]
+    },
+    {
+      "name": "saw-countw",
+      "priority": 100,
+      "cpuQuota": 2.0,
+      "memQuota": 200,
+      "sensitiveFun": "saw-countw",
+      "cpuShare": 100,
+      "cpuModel":{"base":5, "cpuPerReq":1, "randomRange":0.1 },
+      "memModel":{"baseMB":2048, "bytesLeakPerReq": 20, "memPerReqMB": 2},
+      "memBWModel":{"base":200, "BWPerReq":1024},
+      "program":[
+        {"type":"local", "insNum": 20},
+        {"type":"remote", "deps":["protobuf-ads-saw"]},
+        {"type":"local", "insNum": 20}
+      ]
+    }
+  ]
+}
