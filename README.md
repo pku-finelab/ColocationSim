@@ -8,7 +8,7 @@
 用户在ColocationSim中实现新的调度算法，模拟开始后，ColocationSim根据作业描述文件生成并提交对应的作业到调度器，调度器调用新的调度算法进行调度，待所有作业完成后ColocationSim会给出在线作业SLA违反率、资源利用率、资源碎片、离线作业吞吐率等用于评价在离线混部作业调度算法的指标。
 
 Colocationsim架构
-![img1](./img1.png "图片title")
+![img1](./img1.png "架构图")
 
 ## 支持功能 Supported Features
 
@@ -43,4 +43,4 @@ DAG结构的离线作业
 3.	定制在离线作业和作业负载。在线作业负载可参考`modules\cloudsim-examples\src\main\java\org\cloudbus\cloudsim\examples\colocation\socialnetwork.json`，该文件给出了socailnetwork的描述，包含了30个微服务，离线作业负载可参考文`modules\cloudsim-examples\src\main\java\org\cloudbus\cloudsim\examples\colocation\beJobs-sf-mbw.json`
 4.	运行示例程序`org.cloudbus.cloudsim.examples.colocation. ICWSSocialNetworkLcEvaluation`,该类模拟了social network服务和离线作业的混部调度。请注意需要配置输出文件夹`outputPath = "/path/to/your/sim-out"`; 并保障该文件夹已经被创建。
 5.	等待模拟结束后，控制台会输出简要的报告，如：
-![img2](./img2.png "图片title")
+![img2](./img2.png "输出示例")
