@@ -191,7 +191,7 @@ public class ColocationHost extends Vm {
         }
         this.containerList.remove(targetCon);
         this.beList.remove(task);
-        updateUtilization();
+        //updateUtilization();
     }
 
     public long getBeAvailableRam(){
@@ -393,7 +393,7 @@ public class ColocationHost extends Vm {
             monitorData.addMetric(Constants.METRIC_CPU, cpuUsage);
             monitorData.addMetric(Constants.METRIC_MEM, memUsage);
             // send to Broker
-            //CloudSim.send(this.getId(), this.monitorCenter, 0, Constants.MONITER, monitorData);
+            CloudSim.send(this.getId(), this.monitorCenter, 0, Constants.MONITER, monitorData);
             hostCpuTotal = hostCpuTotal + cpuUsage;
             hostMemTotal = hostMemTotal + memUsage;
         }
